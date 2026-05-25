@@ -144,6 +144,7 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
   -e WEBUI_ADMIN_EMAIL="$EMAIL" \
   -e WEBUI_ADMIN_PASSWORD="$PASSWORD" \
   -e WEBUI_ADMIN_NAME="Daniil Bastrich" \
+  -e JWT_EXPIRES_IN=52w \
   -e DEFAULT_LOCALE=ru \
   -e ENABLE_OLLAMA_API=False \
   -e ENABLE_DIRECT_CONNECTIONS=False \
@@ -172,4 +173,7 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
   -e IMAGE_EDIT_ENGINE=openai \
   -e IMAGE_EDIT_MODEL="google/nano-banana-2" \
   -e IMAGES_GEMINI_ENDPOINT_METHOD="generateContent" \
-  -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:main
